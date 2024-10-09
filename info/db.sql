@@ -78,7 +78,7 @@ CREATE TABLE Pedidos(
 
 CREATE TABLE Productos(
     idProducto INT PRIMARY KEY AUTO_INCREMENT,
-    nombreProdcuto VARCHAR(100),
+    nombreProducto VARCHAR(100),
     precioUnitario FLOAT,
     costoVenta FLOAT
 );

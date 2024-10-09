@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('usuarios', function (Blueprint $table) {
-            $table->id();
+            $table->id('idUsuario'); // ID del usuario
+            $table->string('email', 50);
+            $table->string('pass', 50);
+            $table->string('rol'); // Esto puede ser eliminado si solo necesitas el roleId
+            $table->foreignId('roleId')->constrained('roles', 'idRole'); // Asegúrate de que el nombre de la columna sea correcto
             $table->timestamps();
         });
     }

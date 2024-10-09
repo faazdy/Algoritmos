@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sede_mesero', function (Blueprint $table) {
-            $table->id();
+        Schema::create('sede_meseros', function (Blueprint $table) {
+            $table->id('idSedeMesero');
+            $table->foreignId('sede')->constrained('sedes', 'idSede'); // Especificar el nombre de la columna de la clave primaria
+            $table->foreignId('mesero')->constrained('meseros', 'idMesero'); // Asegúrate que la tabla meseros tenga el campo 'id'
             $table->timestamps();
         });
     }
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('sede_mesero');
+        Schema::dropIfExists('sede_meseros');
     }
 };

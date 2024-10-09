@@ -6,13 +6,13 @@ TABLAS:
 	  |
 - Admin --
 
-- Mesas  -
-	  |--[posible tabla intermedia MesaPedido (FK mesas, pedido)], [relacionar el pedido con el mesero]
+- Mesas [posible tabla intermedia para mesaSede]  -
+	  |--[relacionar el pedido con el mesero]
 - Pedido -
 
 
 - Producto ----
-		|---- [posible tabla intermedia productoSede (FK producto, sede)]
+				|---- [posible tabla intermedia productoSede (FK producto, sede)]
 - Sede ---------
 
 - Pago [va relacionada con Pedido, y con Cajero]

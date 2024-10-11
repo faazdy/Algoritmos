@@ -3,7 +3,6 @@ CREATE TABLE Meseros(
     nombre VARCHAR(100),
     apellido VARCHAR(100),
     telefono VARCHAR(20),
-    email VARCHAR(50)
 );
 
 CREATE TABLE Cajeros(
@@ -11,7 +10,6 @@ CREATE TABLE Cajeros(
     nombre VARCHAR(100),
     apellido VARCHAR(100),
     telefono VARCHAR(20),
-    email VARCHAR(50)
 );
 
 CREATE TABLE Admins(
@@ -19,20 +17,20 @@ CREATE TABLE Admins(
     nombre VARCHAR(100),
     apellido VARCHAR(100),
     telefono VARCHAR(20),
-    email VARCHAR(50)
 );
 
-CREATE TABLE Roles(
-    idRole INT PRIMARY KEY AUTO_INCREMENT,
-    roleName VARCHAR(50)
-);
 CREATE TABLE Usuarios(
     idUsuario INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(50) NOT NULL,
     pass VARCHAR(50) NOT NULL,
-    rol ENUM('mesero', 'cajero', 'admin'),
-    roleId INT,
-    FOREIGN KEY (roleId) REFERENCES Roles(idRole)
+    
+    idAdmin INT,
+    idCajero INT,
+    idMesero INT,
+
+    FOREIGN KEY (idAdmin) REFERENCES Admins(idAdmin),
+    FOREIGN KEY (idCajero) REFERENCES Cajeros(idAdmin),
+    FOREIGN KEY (idMesero) REFERENCES Meseros(idMesero)
 );
 
 CREATE TABLE Sedes(

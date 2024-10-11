@@ -11,7 +11,6 @@ class Cajero extends Model
         'nombre',
         'apellido',
         'telefono',
-        'email',
     ];
     public $timestamps = true;
 }

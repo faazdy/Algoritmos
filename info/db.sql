@@ -23,6 +23,7 @@ CREATE TABLE Usuarios(
     idUsuario INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(50) NOT NULL,
     pass VARCHAR(50) NOT NULL,
+    rol ENUM('mesero', 'cajero', 'admin')
     
     idAdmin INT,
     idCajero INT,

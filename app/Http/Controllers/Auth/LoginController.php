@@ -28,11 +28,11 @@ class LoginController extends Controller
     {
         // Redirigir según el rol del usuario
         if ($user->rol == 'mesero') {
-            return redirect()->route('mesero.dashboard'); // Ruta para el dashboard del mesero
+            return redirect()->route('../../../public/Dashboards/mesero/index.html'); // Ruta para el dashboard del mesero
         } elseif ($user->rol == 'cajero') {
-            return redirect()->route('cajero.dashboard'); // Ruta para el dashboard del cajero
+            return redirect()->route('../../../public/Dashboards/cajero/index.html'); // Ruta para el dashboard del cajero
         } elseif ($user->rol == 'admin') {
-            return redirect()->route('admin.dashboard'); // Ruta para el dashboard del admin
+            return redirect()->route('../../../public/Dashboards/administrador/index.html'); // Ruta para el dashboard del admin
         }
 
         // Redirección por defecto si no coincide con ningún rol

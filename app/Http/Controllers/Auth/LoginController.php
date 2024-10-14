@@ -1,53 +1,66 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request; // Asegúrate de importar la clase Request
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use App\Models\Usuario;
 
 class LoginController extends Controller
 {
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home'; // Redirección por defecto
+    protected $redirectTo = '/home';
 
-    /**
-     * Handle a successful login attempt.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  mixed  $user
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    protected function authenticated(Request $request, $user)
+    public function login(Request $request)
     {
-        // Redirigir según el rol del usuario
-        if ($user->rol == 'mesero') {
-            return redirect()->route('../../../public/Dashboards/mesero/index.html'); // Ruta para el dashboard del mesero
-        } elseif ($user->rol == 'cajero') {
-            return redirect()->route('../../../public/Dashboards/cajero/index.html'); // Ruta para el dashboard del cajero
-        } elseif ($user->rol == 'admin') {
-            return redirect()->route('../../../public/Dashboards/administrador/index.html'); // Ruta para el dashboard del admin
+        // Validar las credenciales
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        // Obtener el usuario por su email
+        $usuario = Usuario::where('email', $request->email)->first();
+
+        // Verifica que el usuario exista
+        if (!$usuario) {
+            return back()->withErrors(['email' => 'El email no se encuentra en el sistema']);
         }
 
-        // Redirección por defecto si no coincide con ningún rol
-        return redirect()->intended($this->redirectTo);
+        // Verificar si la contraseña es correcta
+        if (!Hash::check($request->password, $usuario->pass)) { // Cambié a 'pass' para reflejar tu campo en la base de datos
+            return back()->withErrors(['password' => 'La contraseña es incorrecta']);
+        }
+
+        // Autenticar al usuario manualmente
+        Auth::login($usuario);
+
+        // Redirigir según el rol del usuario
+        return $this->authenticated($request, $usuario);
     }
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    // Método para redirigir después de autenticarse
+    protected function authenticated(Request $request, $user)
     {
-        // Middleware para redirigir a los usuarios autenticados al logout
-        $this->middleware('guest')->except('logout');
-        $this->middleware('auth')->only('logout');
+        if ($user->idMesero) {
+            return redirect()->route('mesero.dashboard'); // Cambia por la vista deseada
+        } elseif ($user->idCajero) {
+            return redirect()->route('cajero.dashboard'); // Cambia por la vista deseada
+        } elseif ($user->idAdmin) {
+            return redirect()->route('admin.dashboard'); // Cambia por la vista deseada
+        }
+
+        // Redirige al dashboard general después del inicio de sesión
+        return redirect()->route('dashboard'); // Cambia 'dashboard' por el nombre de la ruta de tu vista
+    }
+
+    // Método para cerrar sesión
+    public function logout(Request $request)
+    {
+        Auth::logout();
+        return redirect()->route('login.form');
     }
 }

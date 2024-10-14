@@ -1,15 +1,21 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\DashboardController; // Asegúrate de incluir tu controlador
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Rutas de login
+Route::get('/login', function () {
+    return view('auth.login');
+})->name('login.form');
 
-Auth::routes();
+Route::post('/login', [LoginController::class, 'login'])->name('login');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/mesero/dashboard', [MeseroController::class, 'index'])->name('mesero.dashboard');
-Route::get('/cajero/dashboard', [CajeroController::class, 'index'])->name('cajero.dashboard');
-Route::get('/admin/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
+// Rutas de dashboard
+Route::get('/dashboard/mesero', [DashboardController::class, 'mesero'])->name('mesero.dashboard');
+Route::get('/dashboard/cajero', [DashboardController::class, 'cajero'])->name('cajero.dashboard');
+Route::get('/dashboard/admin', [DashboardController::class, 'admin'])->name('admin.dashboard');
+
+// Ruta de logout
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 

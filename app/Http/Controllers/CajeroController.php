@@ -42,6 +42,6 @@ class CajeroController extends Controller
         ]);
 
         // Redirigir o mostrar un mensaje de éxito
-        return redirect()->route('cajero.dashboard')->with('success', 'Cajero registrado con éxito.');
+        return redirect()->route('login.form')->with('success', 'Cajero registrado con éxito.');
     }
 }

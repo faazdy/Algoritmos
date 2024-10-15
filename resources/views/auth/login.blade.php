@@ -75,6 +75,12 @@
                             Registrar Nuevo Cajero
                         </a>
                     </div>
+                    <!-- Botón para redirigir al registro de cajeros -->
+                    <div class="col-md-12 text-center mt-3">
+                        <a href="{{ url('create/mesero') }}" class="btn btn-primary">
+                            Registrar Nuevo Mesero
+                        </a>
+                    </div>
 
                 </div>
             </div>

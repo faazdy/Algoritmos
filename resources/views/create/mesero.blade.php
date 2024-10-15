@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container">
-    <h2>Registrar Cajero</h2>
+    <h2>Registrar Mesero</h2>
 
-    <form method="POST" action="{{ route('cajero.register') }}">
+    <form method="POST" action="{{ route('mesero.register') }}">
         @csrf
 
         <div class="form-group">
@@ -30,6 +30,7 @@
         <div class="form-group">
             <label for="password">Contraseña</label>
             <input id="password" type="password" class="form-control" name="password" required>
+            
         </div>
 
         <div class="form-group">
@@ -37,7 +38,7 @@
             <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Registrar Cajero</button>
+        <button type="submit" class="btn btn-primary">Registrar Mesero</button>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>

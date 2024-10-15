@@ -17,6 +17,10 @@ class Usuario extends Authenticatable
     protected $fillable = [
         'email',
         'pass',
+        'rol',
+        'idMesero',
+        'idCajero',
+        'idAdmin',
     ];
 
     // Asegúrate de que la contraseña se almacene con el nombre 'pass'

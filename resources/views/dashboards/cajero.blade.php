@@ -8,7 +8,13 @@
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
-    <h1>Bienvenido, {{ Auth::user()->nombre }}</h1>
-    <a href="{{ route('logout') }}">Cerrar Sesión</a>
+    <h1>Bienvenido, CAJERO </h1>
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
+
+        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-danger">
+            Cerrar Sesion
+        </a>
 </body>
 </html>

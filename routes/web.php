@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\CajeroController;
 use App\Http\Controllers\MeseroController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController; // Asegúrate de incluir tu controlador
 use Illuminate\Support\Facades\Route;
 
@@ -39,6 +40,10 @@ Route::post('/create/cajero', [CajeroController::class, 'register'])->name('caje
 //------MESERO
 Route::get('/create/mesero', [MeseroController::class, 'showRegistrationForm'])->name('meseros.create');
 Route::post('/create/mesero', [MeseroController::class, 'register'])->name('mesero.register');
+
+//------ADMIN
+Route::get('/create/admin', [AdminController::class, 'showRegistrationForm'])->name('admins.create');
+Route::post('/create/admin', [AdminController::class, 'register'])->name('admin.register');
 
 //----------------------------------middleware
 Route::get('/dashboard', function () {

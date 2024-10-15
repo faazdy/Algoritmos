@@ -37,7 +37,7 @@
             <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" required>
         </div>
 
-        <button type="submit" class="btn btn-primary">Registrar Cajero</button>
+        <button type="submit" class="btn btn-primary">Registrar Administrador</button>
         @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>

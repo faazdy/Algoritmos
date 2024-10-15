@@ -19,14 +19,14 @@
                 <div class="card-body row">
     
                     <div class="col-md-6 d-flex align-items-center justify-content-center"> 
-                        <img src="{{ asset('imgs/image.png') }}" alt="" class="img-fluid"> 
+                        <img src="{{ asset('imgs/image2.png') }}" alt="" class="img-fluid"> 
                     </div>
                     
                     <form method="POST" action="{{ route('login') }}" class="col-md-6 d-flex flex-column">
                         @csrf
-                        <h1>INICIAR</h1>
+                        <h1>INICIAR SESIÓN</h1>
                         <div class="mb-3">
-                            <label for="email" class="form-label">{{ __('Email Address') }}</label>
+                            <label for="email" class="form-label">{{ __('Correo') }}</label>
                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                             @error('email')
@@ -37,23 +37,24 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="password" class="form-label">{{ __('Password') }}</label>
+                            <label for="password" class="form-label">{{ __('Contraseña') }}</label>
                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
+                            <a href="">¿Olvidaste tu contraseña?</a>
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
-
+                        
                         <div class="mb-3">
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                 <label class="form-check-label" for="remember">
-                                    {{ __('Remember Me') }}
+                                    {{ __('Recordar datos') }}
                                 </label>
                             </div>
+                            
                         </div>
 
                         <div class="mb-0">
@@ -69,19 +70,7 @@
                         </div>
                     </form>
 
-                    <!-- Botón para redirigir al registro de cajeros -->
-                    <div class="col-md-12 text-center mt-3">
-                        <a href="{{ url('create/cajero') }}" class="btn btn-primary">
-                            Registrar Nuevo Cajero
-                        </a>
-                    </div>
-                    <!-- Botón para redirigir al registro de mesero -->
-                    <div class="col-md-12 text-center mt-3">
-                        <a href="{{ url('create/mesero') }}" class="btn btn-primary">
-                            Registrar Nuevo Mesero
-                        </a>
-                    </div>
-                    <!-- Botón para redirigir al registro de admin -->
+
                     <div class="col-md-12 text-center mt-3">
                         <a href="{{ url('create/admin') }}" class="btn btn-primary">
                             Registrar Nuevo admin

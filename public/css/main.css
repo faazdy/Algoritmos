@@ -1,0 +1,8 @@
+.hero{
+    min-height: 40vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em;
+}

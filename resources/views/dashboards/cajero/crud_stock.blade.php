@@ -3,10 +3,11 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="{{ asset('css/cards.css') }}">
+        <link rel="stylesheet" href="../../../../public/css/cards.css">
+        <link rel="stylesheet" href="../../../../public/css/main.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <title>Cajero | Mi Primera Borrachera</title>
+        <title>Gestion Stock | Vista Previa</title>
     </head>
     <body>
         <nav class="navbar navbar-dark bg-dark fixed-top">
@@ -23,7 +24,7 @@
                 </div>
                 <div class="offcanvas-body">
                   <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item">
+                    <li class="nav-item">
                       <a class="nav-link text-light" aria-current="page" href="#">Inicio</a>
                     </li>
                     <li class="nav-item">
@@ -56,69 +57,83 @@
                       </ul>
                     </li>
                   </ul>
-                  
                 </div>
               </div>
             </div>
         </nav>
         <main style="background-color: rgb(250, 250, 250);">
-            <section>
-              <div class="profile">
-                <img src="{{ asset('imgs/cajero.webp') }}" alt="cajero-pic">
-                <h1>Hola, <span style="color: orange;">{{ Auth::user()->email }}</span></h1>
-              </div>
+            <section class="hero">
+              <h2>GESTION DE STOCK SEDE CHAPINERO</h2>
+              <p>
+                Bienvenido a la gestión de inventario de la sede. Si desea ver los productos en STOCK de la sede
+                seleccione la opción en el menú 'Ver inventario'.
+              </p>
             </section>
+            <hr>
             <section>
-              <h2>Inventario</h2>
+              <h3>Acciones Rapidas</h3>
               <div class="cards-container">
                 <div class="card text-center">
-                  <a href="" href="" 
-                    class="">
-                    <img src="{{ asset('imgs/inventario.webp') }}" alt="">
-                    <h5>Ver Stock</h5>
-                  </a>
-                </div>
-                <div class="card text-center">
-                  <a href="" href="{{ url('') }}" 
-                    class="">
-                    <img src="{{ asset('imgs/addInventario.webp') }}" alt="">
-                    <h5>Gestionar Stock</h5>
+                  <a href="">
+                    <img src="../../../../public/imgs/addInventario.webp" alt="">
+                    <h5>Agregar productos</h5>
                   </a>
                 </div>
               </div>
             </section>
             <hr>
             <section>
-              <h2>Pedidos</h2>
-              <div class="cards-container">
-                <div class="card text-center">
-                  <a href="" href="{{ url('') }}" 
-                    class="">
-                    <img src="{{ asset('imgs/pedido.webp') }}" alt="">
-                    <h5>Ver Pedidos</h5>
-                  </a>
-                </div>
-                <div class="card text-center">
-                  <a href="" href="{{ url('') }}" 
-                    class="">
-                    <img src="{{ asset('imgs/pedido2.webp') }}" alt="">
-                    <h5>Cerrar Pedido</h5>
-                  </a>
-                </div>
-              </div>
-            </section>
-            <hr>
-            <section>
-              <h2>Reportes</h2>
-              <div class="cards-container">
-                <div class="card text-center">
-                  <a href="" href="{{ url('') }}" 
-                    class="">
-                    <img src="{{ asset('imgs/reporte.webp') }}" alt="">
-                    <h5>Generar reporte</h5>
-                  </a>
-                </div>
-              </div>
+              <table class="table table-striped">
+                <thead>
+                  <tr class="table-dark">
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Costo V.ta</th>
+                    <th scope="col">Ganancia</th>
+                    <th scope="col">Accion</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Cerveza</td>
+                    <td>56</td>
+                    <td>$7000</td>
+                    <td>$5000</td>
+                    <td>$2000</td>
+                    <td>
+                      <button class="btn btn-warning">Editar</button>
+                      <button class="btn btn-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>Ron</td>
+                    <td>30</td>
+                    <td>$35000</td>
+                    <td>$30000</td>
+                    <td>$5000</td>
+                    <td>
+                      <button class="btn btn-warning">Editar</button>
+                      <button class="btn btn-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>Aguardiente</td>
+                    <td>16</td>
+                    <td>$26000</td>
+                    <td>$22000</td>
+                    <td>$4000</td>
+                    <td>
+                      <button class="btn btn-warning">Editar</button>
+                      <button class="btn btn-danger">Eliminar</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </section>
         </main>
     </body>

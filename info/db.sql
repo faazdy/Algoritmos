@@ -1,8 +1,18 @@
+CREATE TABLE Sedes(
+    idSede INT PRIMARY KEY AUTO_INCREMENT,
+    nombreSede VARCHAR(100),
+    direccion VARCHAR(100),
+    telefono VARCHAR(12)
+);
 CREATE TABLE Meseros(
     idMesero INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100),
     apellido VARCHAR(100),
     telefono VARCHAR(20),
+
+    idSede INT,
+
+    FOREIGN KEY (idSede) REFERENCES Sedes(idSede)
 );
 
 CREATE TABLE Cajeros(
@@ -10,6 +20,10 @@ CREATE TABLE Cajeros(
     nombre VARCHAR(100),
     apellido VARCHAR(100),
     telefono VARCHAR(20),
+
+    idSede INT,
+
+    FOREIGN KEY (idSede) REFERENCES Sedes(idSede)
 );
 
 CREATE TABLE Admins(
@@ -17,6 +31,10 @@ CREATE TABLE Admins(
     nombre VARCHAR(100),
     apellido VARCHAR(100),
     telefono VARCHAR(20),
+
+    idSede INT,
+
+    FOREIGN KEY (idSede) REFERENCES Sedes(idSede)
 );
 
 CREATE TABLE Usuarios(
@@ -34,12 +52,7 @@ CREATE TABLE Usuarios(
     FOREIGN KEY (idMesero) REFERENCES Meseros(idMesero)
 );
 
-CREATE TABLE Sedes(
-    idSede INT PRIMARY KEY AUTO_INCREMENT,
-    nombreSede VARCHAR(100),
-    direccion VARCHAR(100),
-    telefono VARCHAR(12)
-);
+
 
 CREATE TABLE SedeMesero(
     idSedeMesero INT PRIMARY KEY AUTO_INCREMENT,

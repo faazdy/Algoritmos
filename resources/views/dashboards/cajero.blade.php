@@ -72,14 +72,14 @@
               <h2>Inventario</h2>
               <div class="cards-container">
                 <div class="card text-center">
-                  <a href="" href="" 
+                  <a href="" 
                     class="">
                     <img src="{{ asset('imgs/inventario.webp') }}" alt="">
                     <h5>Ver Stock</h5>
                   </a>
                 </div>
                 <div class="card text-center">
-                  <a href="" href="{{ url('') }}" 
+                  <a href="{{ url('') }}" 
                     class="">
                     <img src="{{ asset('imgs/addInventario.webp') }}" alt="">
                     <h5>Gestionar Stock</h5>
@@ -92,14 +92,14 @@
               <h2>Pedidos</h2>
               <div class="cards-container">
                 <div class="card text-center">
-                  <a href="" href="{{ url('') }}" 
+                  <a href="{{ url('') }}" 
                     class="">
                     <img src="{{ asset('imgs/pedido.webp') }}" alt="">
                     <h5>Ver Pedidos</h5>
                   </a>
                 </div>
                 <div class="card text-center">
-                  <a href="" href="{{ url('') }}" 
+                  <a href="{{ url('') }}" 
                     class="">
                     <img src="{{ asset('imgs/pedido2.webp') }}" alt="">
                     <h5>Cerrar Pedido</h5>
@@ -112,7 +112,7 @@
               <h2>Reportes</h2>
               <div class="cards-container">
                 <div class="card text-center">
-                  <a href="" href="{{ url('') }}" 
+                  <a href="{{ url('') }}" 
                     class="">
                     <img src="{{ asset('imgs/reporte.webp') }}" alt="">
                     <h5>Generar reporte</h5>

@@ -41,6 +41,8 @@ Route::post('/create/cajero', [CajeroController::class, 'register'])->name('caje
 Route::get('/dashboards/cajero/ver_stock', function () {
     return view('dashboards.cajero.ver_stock');
 })->name('cajero.ver_stock');
+Route::get('/dashboards/cajero/crud_stock', function () {return view('dashboards.cajero.crud_stock');})->name('cajero.crud_stock');
+Route::get('/dashboards/cajero/add_producto', function () {return view('dashboards.cajero.add_producto');})->name('cajero.add_producto');
 
 // ------MESERO
 Route::get('/create/mesero', [MeseroController::class, 'showRegistrationForm'])->name('meseros.create');

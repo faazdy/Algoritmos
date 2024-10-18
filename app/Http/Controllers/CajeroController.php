@@ -13,6 +13,20 @@ class CajeroController extends Controller
         return view('create.cajero');
     }
 
+    public function Mostarstock()
+    {
+        return view('cajero.ver_stock');
+    }
+
+    public function Crudstock()
+    {
+        return view('cajero.crud_stock');
+    }
+    
+    public function Addproducto()
+    {
+        return view('cajero.add_producto');
+    }
     
     // Manejar el registro de cajeros
     public function register(Request $request)
@@ -40,6 +54,7 @@ class CajeroController extends Controller
             'idCajero' => $cajero->id,
             'rol' => 'cajero', // Establece el rol por defecto aquí
         ]);
+        
 
         // Redirigir o mostrar un mensaje de éxito
         return redirect()->route('login.form')->with('success', 'Cajero registrado con éxito.');

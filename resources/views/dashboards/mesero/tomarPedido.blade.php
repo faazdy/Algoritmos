@@ -8,9 +8,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-    <nav class="navbar navbar-dark bg-dark fixed-top">
+          <nav class="navbar navbar-dark bg-dark fixed-top">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">Portal Cajero | Chapinero</a>
+              <a class="navbar-brand" href="{{ url('/dashboard/mesero')}}">Portal Mesero | Chapinero</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -22,20 +22,17 @@
                 </div>
                 <div class="offcanvas-body">
                   <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item">
-                      <a class="nav-link text-light" aria-current="page" href="{{ url('dashboard/mesero')}}">Inicio</a>
+                    <li class="nav-item">
+                      <a class="nav-link text-light" aria-current="page" href="#">Inicio</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link text-light" aria-current="page" href="#">Gestionar inventario</a>
+                      <a class="nav-link text-light" aria-current="page" href="{{ route('mesero.tusMesas') }}">Tus mesas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-light" aria-current="page" href="{{ route('mesero.verInventario') }}">Ver Menu</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link text-light" aria-current="page" href="#">Ver inventario</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-light" aria-current="page" href="#">Ver pedidos</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-light" aria-current="page" href="#">Cerrar pedidos</a>
                     </li>
                     <li class="nav-item dropdown">
                       <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown"
@@ -55,11 +52,10 @@
                       </ul>
                     </li>
                   </ul>
-                  
                 </div>
               </div>
             </div>
-    </nav>    
+          </nav>    
 
     <main class="container my-4">
         <h2>Mesa <span id="mesa-number"></span></h2>

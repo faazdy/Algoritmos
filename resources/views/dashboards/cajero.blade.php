@@ -72,7 +72,7 @@
               <h2>Inventario</h2>
               <div class="cards-container">
                 <div class="card text-center">
-                  <a href="" 
+                  <a href="{{ route('cajero.ver_stock')}}" 
                     class="">
                     <img src="{{ asset('imgs/inventario.webp') }}" alt="">
                     <h5>Ver Stock</h5>

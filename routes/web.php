@@ -38,10 +38,19 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 Route::get('/create/cajero', [CajeroController::class, 'showRegistrationForm'])->name('cajeros.create');
 // Ruta para almacenar el nuevo cajero
 Route::post('/create/cajero', [CajeroController::class, 'register'])->name('cajero.register');
+Route::get('/dashboards/cajero/ver_stock', function () {
+    return view('dashboards.cajero.ver_stock');
+})->name('cajero.ver_stock');
 
 // ------MESERO
 Route::get('/create/mesero', [MeseroController::class, 'showRegistrationForm'])->name('meseros.create');
 Route::post('/create/mesero', [MeseroController::class, 'register'])->name('mesero.register');
+Route::get('/dashboards/mesero/tus_mesas', function () {
+    return view('dashboards.mesero.tusMesas');
+})->name('mesero.tusMesas');
+Route::get('/dashboards/mesero/ver_inventario', function () {
+    return view('dashboards.mesero.verInventario');
+})->name('mesero.verInventario');
 
 // Cambia esta línea
 Route::get('/dashboards/mesero/tomarPedido', [ProductoController::class, 'tomarPedido'])->middleware(['auth']);

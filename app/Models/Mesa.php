@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Mesa extends Model
 {
     protected $fillable = [
-        'numeroMesa',
-        'disponible',
+        'nombreMesa',
+        'estado',
     ];
     public $timestamps = true;
 }

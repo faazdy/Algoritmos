@@ -37,4 +37,19 @@ class MeseroController extends Controller
 
         return redirect()->route('login.form')->with('success', 'Mesero registrado con éxito.');
     }
+    // Método para ver las mesas
+    public function tusMesas()
+    {
+        // Obtener las mesas que están siendo atendidas
+        $mesasAtendiendo = Mesa::where('estado', 'atendiendo')->get(); // Asegúrate de que tu modelo y campo existan
+        return view('mesero.tusMesas', compact('mesasAtendiendo')); // Cambiado a la ruta correcta
+    }
+
+    // Método para ver el inventario
+    public function verInventario()
+    {
+        // Obtener el inventario de productos
+        $inventario = Producto::all(); // Asegúrate de que tu modelo exista
+        return view('mesero.verInventario', compact('inventario')); // Cambiado a la ruta correcta
+    }
 }

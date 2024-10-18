@@ -65,7 +65,7 @@ CREATE TABLE SedeMesero(
 CREATE TABLE Mesas(
     idMesa INT PRIMARY KEY AUTO_INCREMENT,
     numeroMesa INT,
-    disponible BOOLEAN
+    disponible ENUM('disponible', 'ocupada')
 );
 
 CREATE TABLE MesaSede(

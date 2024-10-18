@@ -6,6 +6,8 @@ use App\Http\Controllers\MeseroController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DashboardController; // Asegúrate de incluir tu controlador
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductoController;
+
 
 Route::get('/', function () {
     return redirect()->route('login.form');
@@ -37,9 +39,13 @@ Route::get('/create/cajero', [CajeroController::class, 'showRegistrationForm'])-
 // Ruta para almacenar el nuevo cajero
 Route::post('/create/cajero', [CajeroController::class, 'register'])->name('cajero.register');
 
-//------MESERO
+// ------MESERO
 Route::get('/create/mesero', [MeseroController::class, 'showRegistrationForm'])->name('meseros.create');
 Route::post('/create/mesero', [MeseroController::class, 'register'])->name('mesero.register');
+
+// Cambia esta línea
+Route::get('/dashboards/mesero/tomarPedido', [ProductoController::class, 'tomarPedido'])->middleware(['auth']);
+
 
 //------ADMIN
 Route::get('/create/admin', [AdminController::class, 'showRegistrationForm'])->name('admins.create');

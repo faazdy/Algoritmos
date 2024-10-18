@@ -73,7 +73,7 @@
                   <img src="{{ asset('imgs/mesa.webp') }}" alt="">
                 </span>
                 <h5>Mesa #</h5>
-                <a href="" class="btn btn-warning">Tomar pedido</a>
+                <a href="{{ url('dashboards/mesero/tomarPedido') }}" class="btn btn-warning">Tomar pedido</a>
               </div>
               <div class="card text-center">
                 <span>
@@ -127,6 +127,6 @@
             </article>
           </section>
         </main>
-
+      
     </body>
 </html>

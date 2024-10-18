@@ -9,8 +9,10 @@ class Producto extends Model
 {
     protected $fillable = [
         'nombreProducto',
-        'precioUnitario',
+        'descripcion',
+        'cantidad',
         'costoVenta',
+        'precioVenta',
     ];
     public $timestamps = true;
 }

@@ -1,7 +1,10 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 *{
     font-family: 'Open Sans', sans-serif;
 }
+=======
+>>>>>>> 60206ea7ebf737e2412952d2f9eb86caec73179a
 .hero{
     min-height: 40vh;
     text-align: center;
@@ -9,6 +12,7 @@
     flex-direction: column;
     justify-content: center;
     padding: 2em;
+<<<<<<< HEAD
 }
 
 .login-bdy{
@@ -69,3 +73,6 @@
         }        
     }
 }
+=======
+}
+>>>>>>> 60206ea7ebf737e2412952d2f9eb86caec73179a

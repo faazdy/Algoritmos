@@ -30,7 +30,15 @@ CREATE TABLE Admins(
     idAdmin INT PRIMARY KEY AUTO_INCREMENT,
     nombre VARCHAR(100),
     apellido VARCHAR(100),
+<<<<<<< HEAD:database/db.sql
     telefono VARCHAR(20)
+=======
+    telefono VARCHAR(20),
+
+    idSede INT,
+
+    FOREIGN KEY (idSede) REFERENCES Sedes(idSede)
+>>>>>>> 60206ea7ebf737e2412952d2f9eb86caec73179a:info/db.sql
 );
 
 CREATE TABLE Usuarios(
@@ -48,6 +56,10 @@ CREATE TABLE Usuarios(
     FOREIGN KEY (idMesero) REFERENCES Meseros(idMesero)
 );
 
+<<<<<<< HEAD:database/db.sql
+=======
+
+>>>>>>> 60206ea7ebf737e2412952d2f9eb86caec73179a:info/db.sql
 
 
 CREATE TABLE SedeUsuario(
@@ -63,7 +75,12 @@ CREATE TABLE SedeUsuario(
 CREATE TABLE Mesas(
     idMesa INT PRIMARY KEY AUTO_INCREMENT,
     numeroMesa INT,
+<<<<<<< HEAD:database/db.sql
     disponible ENUM('disponible', 'ocupada'),
+=======
+    disponible ENUM('disponible', 'ocupada')
+);
+>>>>>>> 60206ea7ebf737e2412952d2f9eb86caec73179a:info/db.sql
 
     idSede INT,
     FOREIGN KEY (idSede) REFERENCES Sedes(idSede)

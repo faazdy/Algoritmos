@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Primera Borrachera</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="public/imgs/favico.png" alt="">
+                Mi Primera Borrachera
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Menú</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="app/views/login.html">LOGIN</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero text-center">
+        <h1>Bienvenido a Mi Primera Borrachera</h1>
+        <p>¡El lugar ideal para disfrutar con amigos!</p>
+    </div>
+
+    <div class="container my-5" id="about">
+        <h2>Sobre Nosotros</h2>
+        <p>En Mi Primera Borrachera, ofrecemos un ambiente acogedor y divertido. Nuestro objetivo es proporcionar a nuestros clientes una experiencia única con una amplia selección de bebidas y aperitivos.</p>
+    </div>
+
+    <div class="container my-5" id="menu">
+        <h2>Menú de Bebidas</h2>
+        <ul class="list-group">
+            <li class="list-group-item">Cerveza Artesanal - $5</li>
+            <li class="list-group-item">Mojito - $7</li>
+            <li class="list-group-item">Tequila - $6</li>
+            <li class="list-group-item">Cóctel del Día - $8</li>
+            <li class="list-group-item">Vino de la Casa - $10</li>
+        </ul>
+    </div>
+
+    <div class="container my-5" id="contact">
+        <h2>Contacto</h2>
+        <form>
+            <div class="mb-3">
+                <label for="name" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="message" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning">Enviar</button>
+        </form>
+    </div>
+
+    <footer class="footer text-center">
+        <p>&copy; 2024 Mi Primera Borrachera. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

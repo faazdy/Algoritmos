@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+*{
+    font-family: 'Open Sans', sans-serif;
+}
+.hero{
+    min-height: 40vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2em;
+}
+
+.login-bdy{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    .container{
+        width: 70%;
+        margin: 0 auto;
+        max-width: 550px;
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 0 5px 1px rgba(128, 128, 128, 0.295);
+        overflow: hidden;
+        .img img{
+            width: 100%;
+        }
+        
+        form{
+            padding: 1em;
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            
+            input{
+                background-color: transparent;
+                border: none;
+                border: 1px solid rgba(0, 0, 0, 0.24);
+                padding: .5em;
+                border-radius: 4px;
+                
+            }
+            .btn-login{
+                background-color: orangered;
+                padding: .5em;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin: 1em 0;
+
+                &:hover{
+                    background-color: orange;
+                    transition: .3s ease;
+                }
+            }
+            a{
+                text-decoration: none;
+                display: block;
+                margin: 1em 0;
+            }
+        }
+        .register-container{
+            width: 90%;
+        }        
+    }
+}

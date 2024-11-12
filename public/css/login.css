@@ -1,0 +1,10 @@
+.container{
+    padding: 0;
+    overflow: hidden;
+    height: auto;
+    .card-body{
+        padding: 0;
+        form{padding: 2em;}
+        img{width: 100%;}
+    }
+}

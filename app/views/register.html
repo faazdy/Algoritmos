@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../public/css/main.css">
+    <title>Registro</title>
+</head>
+<body class="login-bdy">
+    <div class="container">
+        <form action="register.php" method="POST" class="register-container">
+            <h2>Registro de usuario</h2>
+            
+                <label for="">Nombre</label>
+                <input type="text" name="nombre" id="nombre">
+            
+            
+                <label for="">Apellido</label>
+                <input type="text" name="apellido" id="apellido">
+            
+           
+                <label for="">Telefono</label>
+                <input type="number" name="telefono" id="telefono">
+            
+                <div class="rol">
+                    <label for="">Rol</label><br>
+                    <input type="radio" name="rol" value="mesero" id="rolMesero"><label for="rolMesero">Mesero</label><br>
+                    <input type="radio" name="rol" value="cajero" id="rolCajero"><label for="rolCajero">Cajero</label><br>
+                    <input type="radio" name="rol" value="admin" id="rolAdmin"><label for="rolAdmin">Administrador</label>
+                </div>
+           
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            
+           
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+            
+           
+                <label for="confirm_password">Confirmar contraseña:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+                <label for="" style="display: none; color: red;" id="error-text">Contraseñas no coinciden</label>
+            <button type="submit" class="btn-login">Registrar</button>
+            <a href="login.html">¿Ya tienes una cuenta?</a>
+        </form>
+    </div>
+
+    <script src="./../../public/js/validate.js"></script>
+</body>
+</html>
